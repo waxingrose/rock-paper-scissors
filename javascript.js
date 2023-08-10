@@ -1,11 +1,8 @@
-let playerSelection = prompt('Rock, Paper, or Scissors?')
-let Rock = 'Rock'
-let Paper = 'Paper'
-let Scissors = 'Scissors'
+const playerSelection = prompt('Rock, Paper, or Scissors?')
 
-let computerSelection = Math.floor(Math.random() * 3);
-console.log(computerSelection);
-switch (computerSelection) {
+let getComputerChoice = Math.floor(Math.random() * 3); /* randomize computerSelection 0, 1, 2 */
+console.log(getComputerChoice);
+switch (getComputerChoice) {
   case 0:
         Return = 'Rock';
     break;
@@ -17,6 +14,8 @@ switch (computerSelection) {
     break;
 }
 console.log(Return);
+
+const computerSelection = getComputerChoice /* store getComputerChoice randomizer into computerSelection variable */
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection == 'Rock' && computerSelection == 1) {
