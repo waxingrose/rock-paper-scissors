@@ -31,15 +31,15 @@ function playRound(playerSelection, computerSelection) {
         console.log('Tie!');
     }
     else if (playerSelection == 'Scissors' && computerSelection == 'Rock') {
-        alert('You lose!');
+        alert('You lose! Rock beats Scissors.');
         console.log('You lose!');
     }
     else if (playerSelection == 'Rock' && computerSelection == 'Paper') {
-        alert('You lose!');
+        alert('You lose! Paper beats Rock.');
         console.log('You lose!');
     }
     else if (playerSelection == 'Paper' && computerSelection == 'Scissors') {
-        alert('You lose!');
+        alert('You lose! Scissors beats Paper.');
         console.log('You lose!');
     }
     else {
@@ -50,7 +50,9 @@ function playRound(playerSelection, computerSelection) {
 }
 
 /*pass argument into newGame function*/
-let playerSelection
+let playerSelection = function prompt() {
+    prompt('Rock, Paper, or Scissors?')
+}
 let score = 0;
 
 function newGame(playRound) { /*used playRound function as a parameter*/
