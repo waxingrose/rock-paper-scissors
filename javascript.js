@@ -49,22 +49,39 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+/*pass argument into newGame function*/
 let playerSelection = prompt('Rock, Paper, or Scissors?')
-let Score = 0;
-function newGame(playRound) {
+let score = 0;
+
+function newGame(playRound) { /*used playRound function as a parameter*/
 if (playerSelection == 'Paper' && getComputerChoice == 0) {
-    console.log('Your score:' + ' ' + ++Score);
+    console.log('Your score:' + ' ' + ++score);
 }
 else if (playerSelection == 'Scissors' && getComputerChoice == 1) {
-    console.log('Your score:' + ' ' + ++Score);
+    console.log('Your score:' + ' ' + ++score);
 }
 else if (playerSelection == 'Rock' && getComputerChoice == 2) {
-    console.log('Your score:' + ' ' + ++Score);
+    console.log('Your score:' + ' ' + ++score);
 }
 else {
-    Score;
-    console.log('Your score:' + ' ' + Score);
+    score;
+    console.log('Your score:' + ' ' + score);
     }
 }
 
-newGame(playRound(playerSelection, Return))
+newGame(playRound(playerSelection, Return)) /*playRound function as an argument is copied onto the parameter*/
+
+let repeat = prompt('New Game?')
+function loop(repeat) {
+    if (repeat == 'Yes') {
+        return newGame(playRound(playerSelection, Return));
+    }
+    else if (repeat == 'No') {
+        null;
+    }
+    else {
+        null;
+        console.log('Invalid');
+    }
+}
+loop(prompt())
