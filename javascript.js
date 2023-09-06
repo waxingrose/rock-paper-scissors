@@ -17,30 +17,37 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection == 'Paper' && computerSelection == 'Rock') {
         alert('You win! Paper beats Rock!');
         console.log('You win! Paper beats Rock!');
+        ++score;
     }
     else if (playerSelection == 'Scissors' && computerSelection == 'Paper') {
         alert('You win! Scissors beats Paper!');
         console.log('You win! Scissors beats Paper!');
+        ++score;
     }
     else if (playerSelection == 'Rock' && computerSelection == 'Scissors') {
         alert('You win! Rock beats Scissors');
         console.log('You win! Rock beats Scissors!');
+        ++score;
     }
     else if (playerSelection == computerSelection) {
         alert('Tie!');
         console.log('Tie!');
+        score;
     }
     else if (playerSelection == 'Scissors' && computerSelection == 'Rock') {
         alert('You lose! Rock beats Scissors.');
         console.log('You lose!');
+        score;
     }
     else if (playerSelection == 'Rock' && computerSelection == 'Paper') {
         alert('You lose! Paper beats Rock.');
         console.log('You lose!');
+        score;
     }
     else if (playerSelection == 'Paper' && computerSelection == 'Scissors') {
         alert('You lose! Scissors beats Paper.');
         console.log('You lose!');
+        score;
     }
     else {
         null
@@ -49,27 +56,17 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-/*pass argument into newGame function*/
-let playerSelection = function prompt() {
-    prompt('Rock, Paper, or Scissors?')
-}
+/* Assigned variables */
+let playerSelection
 let score = 0;
 
-function newGame(playRound) { /*used playRound function as a parameter*/
-if (playerSelection == 'Paper' && getComputerChoice == 0) {
-    console.log('Your score:' + ' ' + ++score);
-}
-else if (playerSelection == 'Scissors' && getComputerChoice == 1) {
-    console.log('Your score:' + ' ' + ++score);
-}
-else if (playerSelection == 'Rock' && getComputerChoice == 2) {
-    console.log('Your score:' + ' ' + ++score);
-}
-else {
-    score;
-    console.log('Your score:' + ' ' + score);
+function Game() {
+    if (score > 3) {
+        console.log('You win!')
     }
 }
 
-newGame(playRound(prompt('Rock, Paper, or Scissors?'), Return)); /*playRound function as an argument is copied onto the parameter*/
-
+Game(playRound(prompt('Rock, Paper, or Scissors?'), Return)); 
+Game(playRound(prompt('Rock, Paper, or Scissors?'), Return)); 
+Game(playRound(prompt('Rock, Paper, or Scissors?'), Return)); 
+Game(playRound(prompt('Rock, Paper, or Scissors?'), Return)); 
