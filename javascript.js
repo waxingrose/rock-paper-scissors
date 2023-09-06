@@ -69,15 +69,16 @@ else {
     }
 }
 
-newGame(playRound(playerSelection, Return)) /*playRound function as an argument is copied onto the parameter*/
+newGame(playRound(prompt('Rock, Paper, or Scissors?'), Return)); /*playRound function as an argument is copied onto the parameter*/
+newGame(playRound(prompt('Rock, Paper, or Scissors?'), Return));
+newGame(playRound(prompt('Rock, Paper, or Scissors?'), Return));
+newGame(playRound(prompt('Rock, Paper, or Scissors?'), Return));
+newGame(playRound(prompt('Rock, Paper, or Scissors?'), Return));
 
-let repeat = prompt('New Game?')
+/*let repeat = prompt('New Game?')
 function loop(repeat) {
     if (repeat == 'Yes') {
-    return newGame(playRound(prompt('Rock, Paper, or Scissors?'), Return));
-    }
-    else if (repeat == 'No') {
-        null;
+        newGame(playRound(prompt('Rock, Paper, or Scissors?', Return)));
     }
     else {
         null;
@@ -85,3 +86,5 @@ function loop(repeat) {
     }
 }
 loop(repeat)
+loop(repeat)
+*/
