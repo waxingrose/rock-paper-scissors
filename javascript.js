@@ -50,7 +50,7 @@ function playRound(playerSelection, computerSelection) {
 }
 
 /*pass argument into newGame function*/
-let playerSelection = prompt('Rock, Paper, or Scissors?')
+let playerSelection
 let score = 0;
 
 function newGame(playRound) { /*used playRound function as a parameter*/
@@ -70,21 +70,4 @@ else {
 }
 
 newGame(playRound(prompt('Rock, Paper, or Scissors?'), Return)); /*playRound function as an argument is copied onto the parameter*/
-newGame(playRound(prompt('Rock, Paper, or Scissors?'), Return));
-newGame(playRound(prompt('Rock, Paper, or Scissors?'), Return));
-newGame(playRound(prompt('Rock, Paper, or Scissors?'), Return));
-newGame(playRound(prompt('Rock, Paper, or Scissors?'), Return));
 
-/*let repeat = prompt('New Game?')
-function loop(repeat) {
-    if (repeat == 'Yes') {
-        newGame(playRound(prompt('Rock, Paper, or Scissors?', Return)));
-    }
-    else {
-        null;
-        console.log('Invalid');
-    }
-}
-loop(repeat)
-loop(repeat)
-*/
