@@ -74,7 +74,7 @@ newGame(playRound(playerSelection, Return)) /*playRound function as an argument 
 let repeat = prompt('New Game?')
 function loop(repeat) {
     if (repeat == 'Yes') {
-        return newGame(playRound(playerSelection, Return));
+    return newGame(playRound(prompt('Rock, Paper, or Scissors?'), Return));
     }
     else if (repeat == 'No') {
         null;
@@ -84,4 +84,4 @@ function loop(repeat) {
         console.log('Invalid');
     }
 }
-loop(prompt())
+loop(repeat)
