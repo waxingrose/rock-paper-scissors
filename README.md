@@ -1,4 +1,5 @@
 # rock-paper-scissors
 
-Rock paper scissors against the computer game.
-See final results of project.
+A rock paper scissors game against the computer.
+
+See results of project.
