@@ -1,56 +1,57 @@
-let computerSelection = function getComputerChoice () { 
-    switch (Math.floor(Math.random() * 3)) {  /* randomizer 0, 1, 2 */
+const computerSelection = getComputerChoice();
+
+function getComputerChoice() {
+    switch ((Math.floor(Math.random()*3))) {  /* randomizer 0, 1, 2 */
         case 0:
-            Return = 'Rock';
+            return 'Rock';
             break;
         case 1:
-            Return = 'Paper';
+            return 'Paper';
             break;
         case 2:
-            Return = 'Scissors';
-            break;
+            return 'Scissors';
+        break;
     }
-    Return;
-};
+}
 
 function playRound(playerSelection, computerSelection) {
-    if (playerSelection == 'Paper' && Return == 'Rock') {
+    if (playerSelection == 'Paper' && computerSelection == 'Rock') {
         alert('You win! Paper beats Rock!');
         console.log('You win! Paper beats Rock!');
         console.log('You:' + ++playerScore);
         console.log('Computer:' + computerScore);
     }
-    else if (playerSelection == 'Scissors' && Return == 'Paper') {
+    else if (playerSelection == 'Scissors' && computerSelection == 'Paper') {
         alert('You win! Scissors beats Paper!');
         console.log('You win! Scissors beats Paper!');
         console.log('You:' + ++playerScore);
         console.log('Computer:' + computerScore);
     }
-    else if (playerSelection == 'Rock' && Return == 'Scissors') {
+    else if (playerSelection == 'Rock' && computerSelection == 'Scissors') {
         alert('You win! Rock beats Scissors');
         console.log('You win! Rock beats Scissors!');
         console.log('You:' + ++playerScore);
         console.log('Computer:' + computerScore);
     }
-    else if (playerSelection == Return) {
+    else if (playerSelection == computerSelection) {
         alert('Tie!');
         console.log('Tie!');
         console.log('You:' + playerScore);
         console.log('Computer:' + computerScore);
     }
-    else if (playerSelection == 'Scissors' && Return == 'Rock') {
+    else if (playerSelection == 'Scissors' && computerSelection == 'Rock') {
         alert('You lose! Rock beats Scissors.');
         console.log('You lose!');
         console.log('You:' + playerScore);
         console.log('Computer:' + ++computerScore);
     }
-    else if (playerSelection == 'Rock' && Return == 'Paper') {
+    else if (playerSelection == 'Rock' && computerSelection == 'Paper') {
         alert('You lose! Paper beats Rock.');
         console.log('You lose!');
         console.log('You:' + playerScore);
         console.log('Computer:' + ++computerScore);
     }
-    else if (playerSelection == 'Paper' && Return == 'Scissors') {
+    else if (playerSelection == 'Paper' && computerSelection == 'Scissors') {
         alert('You lose! Scissors beats Paper.');
         console.log('You lose!');
         console.log('You:' + playerScore);
@@ -86,8 +87,8 @@ function Game() {
     }
 }
 
-playRound(prompt('Rock, Paper, or Scissors?'), computerSelection()); 
-playRound(prompt('Rock, Paper, or Scissors?'), computerSelection()); 
-playRound(prompt('Rock, Paper, or Scissors?'), computerSelection());  
-playRound(prompt('Rock, Paper, or Scissors?'), computerSelection());  
-Game(playRound(prompt('Rock, Paper, or Scissors?'), computerSelection())); 
+playRound(prompt('Rock, Paper, or Scissors?'), getComputerChoice()); 
+playRound(prompt('Rock, Paper, or Scissors?'), getComputerChoice()); 
+playRound(prompt('Rock, Paper, or Scissors?'), getComputerChoice());  
+playRound(prompt('Rock, Paper, or Scissors?'), getComputerChoice());  
+Game(playRound(prompt('Rock, Paper, or Scissors?'), getComputerChoice())); 
