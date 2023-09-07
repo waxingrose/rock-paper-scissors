@@ -12,7 +12,6 @@ let computerSelection = function getComputerChoice () {
     }
     Return;
 };
-console.log(Return);
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection == 'Paper' && Return == 'Rock') {
