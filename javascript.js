@@ -1,4 +1,4 @@
-const computerSelection = getComputerChoice();
+let computerSelection = getComputerChoice();
 
 function getComputerChoice() {
     switch ((Math.floor(Math.random()*3))) {  /* randomizer 0, 1, 2 */
@@ -15,6 +15,10 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
+
+    computerSelection = getComputerChoice();
+    playerSelection = prompt('Rock, Paper, or Scissors?');
+
     if (playerSelection.toLowerCase() == 'paper' && computerSelection == 'rock') {
         alert('You win! Paper beats Rock!');
         console.log('You win! Paper beats Rock!');
@@ -58,39 +62,25 @@ function playRound(playerSelection, computerSelection) {
 }
 
 /* Assigned variables */
-let playerSelection = 'rock'
+let playerSelection; 
 let playerScore = 0;
 let computerScore = 0;
-let win = 'win'; 
-let lose = 'lose'; 
+let win = 'win';  
+let lose = 'lose';  
 let tie = 'tie';
-
-function game(playRound) {
-    if (playRound == win) {
-        console.log('You:' + ++playerScore);
-        console.log('Computer:' + computerScore);
-    }
-    else if (playRound == lose) {
-        console.log('You:' + playerScore);
-        console.log('Computer:' + ++computerScore);
-    }
-    else if (playRound == tie) {
-        console.log('You:' + playerScore);
-        console.log('Computer:' + computerScore);
-    }
-}
+let round = 0;
 
 function results() {
-    if (playerScore > computerScore) {
+    if (playerScore > computerScore && round == 5) {
         alert(`Congratulations! You beat the computer with a score of ${playerScore}:${computerScore}!`)
         console.log(`Congratulations! You beat the computer with a score of ${playerScore}:${computerScore}!`)
     }
-    else if (playerScore < computerScore) {
+    else if (playerScore < computerScore && round == 5) {
         alert(`You lost against the computer with a score of ${playerScore}:${computerScore}!`)
         console.log(`You lost against the computer with a score of ${playerScore}:${computerScore}!`)
     }   
-    else if (playerScore == computerScore) {
-        alert(`Game is tied with a score of ${playerScore}:${computerScore}!`)
+    else if (playerScore == computerScore && round == 5) {
+        alert(`Game is a draw with a score of ${playerScore}:${computerScore}!`)
         console.log(`Game is a draw with a score of ${playerScore}:${computerScore}!`)
     }
     else {
@@ -98,9 +88,27 @@ function results() {
     }   
 }
 
-game(playRound(prompt('Rock, Paper, or Scissors?'), getComputerChoice())); 
-game(playRound(prompt('Rock, Paper, or Scissors?'), getComputerChoice())); 
-game(playRound(prompt('Rock, Paper, or Scissors?'), getComputerChoice())); 
-game(playRound(prompt('Rock, Paper, or Scissors?'), getComputerChoice())); 
-game(playRound(prompt('Rock, Paper, or Scissors?'), getComputerChoice())); 
-results();
+function game(playRound) {
+    if (playRound == win) {
+        console.log('You:' + ++playerScore);
+        console.log('Computer:' + computerScore);
+        ++round;
+    }
+    else if (playRound == lose) {
+        console.log('You:' + playerScore);
+        console.log('Computer:' + ++computerScore);
+        ++round;
+    }
+    else if (playRound == tie) {
+        console.log('You:' + playerScore);
+        console.log('Computer:' + computerScore);
+        ++round;
+    }
+    return results();
+}
+
+game(playRound(playerSelection, computerSelection));
+game(playRound(playerSelection, computerSelection));
+game(playRound(playerSelection, computerSelection));
+game(playRound(playerSelection, computerSelection));
+game(playRound(playerSelection, computerSelection));
