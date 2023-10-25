@@ -76,20 +76,18 @@ function results() {
 function game(playRound) {
 
     const div = document.querySelector('div');
-    let score = '';
-    div.textContent = score;
 
     if (playRound === 'win') {
-         score = 'You:' + ++ playerScore + ' ' +
-        'Computer:' + computerScore;
+        div.textContent = `You: + ${++playerScore}
+        Computer: + ${computerScore}`;
         ++ round;
     } else if (playRound === 'lose') {
-         score = 'You:' + playerScore + ' ' +
-        'Computer:' + ++ computerScore;
+        div.textContent = `You: + ${playerScore}
+        Computer:' + ${++computerScore}`;
         ++ round;
     } else if (playRound === 'tie') {
-         score = 'You:' + playerScore + ' ' +
-        'Computer:' + computerScore;
+        div.textContent = `You: + ${playerScore}
+        Computer: + ${computerScore}`;
         ++ round;
     }
     return results();
