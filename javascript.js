@@ -78,16 +78,16 @@ function game(playRound) {
     const div = document.querySelector('div');
 
     if (playRound === 'win') {
-        div.textContent = `You: + ${++playerScore}
-        Computer: + ${computerScore}`;
+        div.textContent = `You: ${++playerScore}
+        Computer: ${computerScore}`;
         ++ round;
     } else if (playRound === 'lose') {
-        div.textContent = `You: + ${playerScore}
-        Computer:' + ${++computerScore}`;
+        div.textContent = `You: ${playerScore}
+        Computer: ${++computerScore}`;
         ++ round;
     } else if (playRound === 'tie') {
-        div.textContent = `You: + ${playerScore}
-        Computer: + ${computerScore}`;
+        div.textContent = `You: ${playerScore}
+        Computer: ${computerScore}`;
         ++ round;
     }
     return results();
