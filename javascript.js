@@ -18,37 +18,34 @@ function playRound(playerSelection, computerSelection) {
 
     computerSelection = getComputerChoice();
 
-    if (playerSelection.toLowerCase() == 'paper' && computerSelection == 'rock') {
+    if (playerSelection == 'paper' && computerSelection == 'rock') {
         alert('You win! Paper beats Rock!');
         console.log('You win! Paper beats Rock!');
         return 'win';
-    } else if (playerSelection.toLowerCase() == 'scissors' && computerSelection == 'paper') {
+    } else if (playerSelection == 'scissors' && computerSelection == 'paper') {
         alert('You win! Scissors beats Paper!');
         console.log('You win! Scissors beats Paper!');
         return 'win';
-    } else if (playerSelection.toLowerCase() == 'rock' && computerSelection == 'scissors') {
+    } else if (playerSelection == 'rock' && computerSelection == 'scissors') {
         alert('You win! Rock beats Scissors');
         console.log('You win! Rock beats Scissors!');
         return 'win';
-    } else if (playerSelection.toLowerCase() == computerSelection) {
+    } else if (playerSelection == computerSelection) {
         alert('Tie!');
         console.log('Tie!');
         return 'tie';
-    } else if (playerSelection.toLowerCase() == 'scissors' && computerSelection == 'rock') {
+    } else if (playerSelection == 'scissors' && computerSelection == 'rock') {
         alert('You lose! Rock beats Scissors.');
         console.log('You lose!');
         return 'lose';
-    } else if (playerSelection.toLowerCase() == 'rock' && computerSelection == 'paper') {
+    } else if (playerSelection == 'rock' && computerSelection == 'paper') {
         alert('You lose! Paper beats Rock.');
         console.log('You lose!');
         return 'lose';
-    } else if (playerSelection.toLowerCase() == 'paper' && computerSelection == 'scissors') {
+    } else if (playerSelection == 'paper' && computerSelection == 'scissors') {
         alert('You lose! Scissors beats Paper.');
         console.log('You lose!');
         return 'lose';
-    } else {
-        null
-        console.log('Null');
     }
 }
 
@@ -78,15 +75,15 @@ function game(playRound) {
     const div = document.querySelector('div');
 
     if (playRound === 'win') {
-        div.textContent = `You: ${++playerScore}
+        div.textContent = `You: ${++playerScore} 
         Computer: ${computerScore}`;
         ++ round;
     } else if (playRound === 'lose') {
-        div.textContent = `You: ${playerScore}
+        div.textContent = `You: ${playerScore} 
         Computer: ${++computerScore}`;
         ++ round;
     } else if (playRound === 'tie') {
-        div.textContent = `You: ${playerScore}
+        div.textContent = `You: ${playerScore} 
         Computer: ${computerScore}`;
         ++ round;
     }
